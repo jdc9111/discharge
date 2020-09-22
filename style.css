@@ -1,0 +1,9 @@
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+input[type=checkbox]:checked + label {
+  color: black;
+  font-style: normal;
+} 
+
