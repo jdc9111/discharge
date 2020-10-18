@@ -1,3 +1,5 @@
+
+/*
 input[type=checkbox] + label {
   color: #ccc;
   font-style: italic;
@@ -7,3 +9,14 @@ input[type=checkbox]:checked + label {
   font-style: normal;
 } 
 
+*/
+
+.invisible {
+  display: none;
+}
+
+.logo {
+  margin-left: 30px;
+  margin-top: 50px;
+  width: 220px;
+}
