@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>ERFaster.ca</title>
+    <title>ED Discharge Instructions</title>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
 
@@ -14,7 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>ED Discharge Instructions</title>
   </head>
 
   <body>
@@ -41,77 +41,83 @@
         </div>
       </div>
 
-      <div class="ml-3 mr-3 form-group referralDropDown">
-        <label class="text-weight-bold" for="referralSentDrop">A referral has been sent to:</label>
-          <select class="referralSentDrop form-control font-weight-bold" id="referralSent">
-            <option value="none">-</option>
-            <option value="Dr. Akinyele">Dr. Akinyele - 31 Saint Marie St, Collingwood - 705-444-5695</option>
-            <option value="Dr. Lisi">Dr. Lisi - General Surgery - 28 Huron St. Collingwood - 705-444-0089</option>
-            <option value="Dr. Foel">Dr. K. Foell (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - (705)-915-380</option>
-            <option value="Dr. Iocca">Dr. Iocca - Royal Court Medical Centre - Suite 206 - 1 Quarry Ridge -Barrie - (705) 792-6796</option>
-            <option value="Dr. Jahangirvand">Dr. Jahangirvand - 480 Huronia Road, Suite 204 -Barrie -(705) 503-5800</option>
-            <option value="Dr. Leslie">Dr. R. Leslie (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - (705)-915-380</option>
-            <option value="Dr. Hartsburg">Dr. C. Hartsburg (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - 705-915-380</option>
-            <option value="Dr. Ray">Dr. A. Ray (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - 705-915-380</option>
-            <option value="Collingwood Cardiology">Dr. P. Smylie - Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648</option>
-            <option value="Collingwood Cardiology">Dr. E. Goode - Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648</option>
-            <option value="Collingwood Cardiology">Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648</option>
-            <option value="Dr. Zadra">Dr. J. Zadra (Urology) - 1 Quarry Ridge Road, Unit 202</option>
-            <option>Stroke Prevention Clinic - Royal Victoria Hospital - 705-728-9090 Ext. 23300</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+      <div class="ml-3 mr-3 referralDropDown" id="referralRemove">
+        <label for="ice-cream-flavor" class="font-weight-bold">A referral has been sent to:</label>
+        <input list="doctors" id="ice-cream-choice" name="ice-cream-choice" class="referralTo form-control" type="text">
+        
+        <datalist id="doctors">
+            <option value="Dr. Akinyele - 31 Saint Marie St, Collingwood - 705-444-5695">
+            <option value="Dr. Lisi - General Surgery - 28 Huron St. Collingwood - 705-444-0089">
+            <option value="Dr. K. Foell (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - (705)-915-380">
+            <option value="Dr. Iocca - Royal Court Medical Centre - Suite 206 - 1 Quarry Ridge -Barrie - (705) 792-6796">
+            <option value="Dr. Jahangirvand - 480 Huronia Road, Suite 204 -Barrie -(705) 503-5800">
+            <option value="Dr. R. Leslie (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - (705)-915-380">
+            <option value="Dr. C. Hartsburg (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - 705-915-380">
+            <option value="Dr. A. Ray (Urology)- Royal Court Medical Centre - 1 Quarry Ridge, Suite 206 -Barrie, ON - 705-915-380">
+            <option value="Dr. P. Smylie - Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648">
+            <option value="Dr. E. Goode - Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648">
+            <option value="Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648">
+            <option value="Dr. J. Zadra (Urology) - 1 Quarry Ridge Road, Unit 202">
+            <option value="Stroke Prevention Clinic - Royal Victoria Hospital - 705-728-9090 Ext. 23300">
+        </datalist>
+        
+
       </div>
 
-      <div class="ml-3 mr-3 form-group altReferral">
-        <label for="exampleFormControlTextarea1">A referral has been sent to:</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <small id="referralHelpt" class="form-text text-muted">If not listed above.</small>
-      </div>
 
-      <div class="form-row ml-3 mr-3">
-        <div class="col-sm-3">
-          <label for="date">Appointment Date</label>
-          <input type="date" class="aptDate form-control" id="date" name="date">
-          <small id="dateHelp" class="form-text text-muted">If available</small>
-        </div>
+      <div class="apts">
+        <div class="form-row ml-3 mr-3 pt-3">
+          <div class="col-sm-3">
+            <label for="date">Appointment Date</label>
+            <input type="date" class="aptDate form-control" id="date" name="date">
+            <small id="dateHelp" class="form-text text-muted">If available</small>
+          </div>
 
-        <div class="col-sm-3">
-          <label>Appointment Time</label>
-          <input type="time" class="startTimeInput form-control">
-          <small id="timeHelp" class="form-text text-muted">If available</small>
+          <div class="col-sm-3">
+            <label>Appointment Time</label>
+            <input type="time" class="startTimeInput form-control">
+            <small id="timeHelp" class="form-text text-muted">If available</small>
+          </div>
         </div>
       </div>
+ 
     
     <br>
 
-      <div class="ml-3 mr-3 standardInstructions">
-      <h4 class="pt-2 pb-2 font-weight-bold">Standard Instructions</h4>        
-        <div id="instructionOptions">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="optional form-check-label" for="exampleCheck1"><b>Incidental findings</b>: You have been provided with printed copy of your imaging (X-ray, CT-scan, etc) report. Please take it to your family MD for review. It may contain "incidental" findings that require further investingation.</label><br>
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="optional form-check-label" for="exampleCheck1" value="A requisition has been sent"><b>Outpatient Imaging:</b> A requisition has been sent and you will receive a phone call once this test has been scheduled.
-              Follow up with your family physician if you do not receive a phone call within one week.</label><br>
-              <input type="checkbox" class="headInjury form-check-input" id="abdominalPain">
-                <label class="optional form-check-label" for="exampleCheck1">Abdominal pain</label><br>  
-              <input type="checkbox" class="laceration form-check-input" id="headache">
-                <label class="optional form-check-label" for="exampleCheck1">Headache</label><br>
-              <input type="checkbox" class="headInjury form-check-input" id="headInury">
-                <label class="optional form-check-label" for="exampleCheck1">Head Injury</label><br>
-              <input type="checkbox" class="laceration form-check-input" id="laceration">
-                <label class="optional form-check-label" for="exampleCheck1">Laceration Instructions</label><br>
-              <input type="checkbox" class="proceduralSedation form-check-input" id="proceduralSedation">
-                <label class="optional form-check-label" for="exampleCheck1">Procedural Sedation</label><br>
-            </div>
+      <div class="standardInstructions" id="instructionOptions">
+        <div class="card ml-3 mr-3 pb-3 bg-light">
+          <div class="ml-3 mr-3">
+          <h4 class="pt-2 pb-2 font-weight-bold">Standard Instructions</h4>        
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="optional form-check-label" for="exampleCheck1"><b>Incidental findings</b>: You have been provided with printed copy of your imaging (X-ray, CT-scan, etc) report. Please take it to your family MD for review. It may contain "incidental" findings that require further investingation.</label><br>
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="optional form-check-label" for="exampleCheck1" value="A requisition has been sent"><b>Outpatient Imaging:</b> A requisition has been sent and you will receive a phone call once this test has been scheduled.
+                  Follow up with your family physician if you do not receive a phone call within one week.</label><br>
+                  
+
+
+                  <input type="checkbox" class="abdominalPain form-check-input" id="abdominalPain">
+                    <label class="optional form-check-label" for="exampleCheck1">Abdominal pain</label><br>  
+                  <input type="checkbox" class="headache form-check-input" id="headache">
+                    <label class="optional form-check-label" for="exampleCheck1">Headache</label><br>
+                  <input type="checkbox" class="headInjury form-check-input" id="headInjury">
+                    <label class="optional form-check-label" for="exampleCheck1">Concussion</label><br>
+                  <input type="checkbox" class="laceration form-check-input" id="laceration">
+                    <label class="optional form-check-label" for="exampleCheck1">Laceration Instructions</label><br>
+                  <input type="checkbox" class="proceduralSedation form-check-input" id="proceduralSedation">
+                    <label class="optional form-check-label" for="exampleCheck1">Procedural Sedation</label><br>
+                </div>
+          </div>
         </div>
       </div>
+
+
+
           
       <div class="pt-3 ml-3 mr-3">
         <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Special Instructions:</h4></label>
-          <textarea class="form-control" id="specialInstructions" rows="12"></textarea>
+          <textarea class="form-control form-control-lg" id="specialInstructions" rows="12"></textarea>
       </div>
       
 
@@ -119,8 +125,28 @@
 
     </br>
 
-    <p class="ml-3">If your symptoms worsen or if you have concerns about your condition:
-    Contact your Family Physician, Nurse Practitioner, or call <b>TeleHealth Ontario</b> at 1-866-797-0000 or retrun to your local Emergency Department.</p>
+
+
+    <h4 class="ml-3">If your symptoms change or get worse or if you have concerns about your condition:
+      Contact your Family Physician, Nurse Practitioner, or call <b>TeleHealth Ontario</b> at 1-866-797-0000 or retrun to your local Emergency Department.</h4>
+  
+      <div class="text-center" id="qr">   
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+    
+
+
+
+  
     
     <div class="printButton text-center">
       <button type="button" class="enter text-center mt-5 mb-5 btn btn-primary btn-lg">Print Instructions</button>
@@ -132,11 +158,6 @@
 
 
     
-
-    
-
-
-
 
     
 

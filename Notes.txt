@@ -1,0 +1,11 @@
+The cool thing about this is that it's a "collapsing" form.  When printed it removes unnecssary or irrelevant text.
+
+The 'Referral' box autocompletes.  Includes contact information to satisfy the CPSO requirement.
+
+'Apt Date & Time' boxes are removed if there is no scheduled apt time.
+
+'Standard instructions' can be text that is added to the "Special Instrucitons" when the form is printer OR a QR code.
+
+ToDo's
+    Put today's date and time on.
+    
