@@ -46,7 +46,7 @@
 
       <div class="ml-3 mr-3 form-group">
         <div class="form-group">
-          <label class="font-weight-bold" for="dischargeDiagnosis">Discharge Diagnosis:</label>
+          <label class="font-weight-bold" for="dischargeDiagnosis"><h4>Discharge Diagnosis:</h4></label>
           <input type="font-weight-bold" class="form-control form-control-lg font-weight-bold" id="dischargeDiagnosis">
         </div>
       </div>
@@ -92,6 +92,16 @@
     
     <br>
 
+      <div class="medInit pt-3 ml-3 mr-3">
+        <label for="medsToStart"><h4 class="font-weight-bold">Medications to START:</h4></label>
+          <textarea class="form-control form-control-lg" id="medsToStart" rows=4></textarea>
+      </div>
+
+      <div class="medHalt pt-3 pb-3 ml-3 mr-3">
+        <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Medications to STOP:</h4></label>
+          <textarea class="form-control form-control-lg" id="medsToStop" rows=4></textarea>
+      </div>
+      
       <div class="standardInstructions" id="instructionOptions">
         <div class="card ml-3 mr-3 pb-3 bg-light">
           <div class="ml-3 mr-3">
@@ -105,20 +115,20 @@
                     <label class="optional form-check-label" for="exampleCheck1"><b>General Pediatrics Advice</b></label><br> 
 
 
-                  <input type="checkbox" class="abdominalPain form-check-input" id="abdominalPain">
-                    <label class="optional form-check-label" for="exampleCheck1">Abdominal pain</label><br> 
                     
                   <input type="checkbox" class="abdominalPain form-check-input" id="diverticulitis">
                     <label class="optional form-check-label" for="exampleCheck1">Diverticulitis</label><br>  
 
-                  <input type="checkbox" class="headache form-check-input" id="headache">
-                    <label class="optional form-check-label" for="exampleCheck1">Headache</label><br>
                   <input type="checkbox" class="headInjury form-check-input" id="concussion">
                     <label class="optional form-check-label" for="exampleCheck1">Concussion</label><br>
-                  <input type="checkbox" class="laceration form-check-input" id="laceration">
-                    <label class="optional form-check-label" for="exampleCheck1">Laceration Instructions</label><br>
-                  <input type="checkbox" class="proceduralSedation form-check-input" id="proceduralSedation">
+
+                  <input type="checkbox" class="form-check-input" id="laceration">
+                    <label class="optional form-check-label" for="exampleCheck1">Laceration</label><br>
+
+                  <input type="checkbox" class="form-check-input" id="proceduralSedation">
                     <label class="optional form-check-label" for="exampleCheck1">Procedural Sedation</label><br>
+
+
                   
                     <input type="checkbox" class="proceduralSedation form-check-input" id="shingles">
                     <label class="optional form-check-label" for="exampleCheck1">Shingles</label><br>
@@ -130,8 +140,6 @@
       </div>
 
 
-
-          
       <div class="pt-3 ml-3 mr-3">
         <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Special Instructions:</h4></label>
           <textarea class="form-control form-control-lg" id="specialInstructions" rows=16></textarea>

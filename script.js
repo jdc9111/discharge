@@ -9,6 +9,13 @@ const aptDateTime = document.querySelector('.apts');
 
 const aptDay = document.querySelector('.aptDate');
 
+const medStart = document.querySelector('#medsToStart');
+const medBegin = document.querySelector('.medInit');
+
+const medStop = document.querySelector('#medsToStop');
+const medEnd = document.querySelector('.medHalt');
+
+
 const ifAvailableDate=document.querySelector('dateHelp');
 const ifAvailableTime=document.querySelector('timeHelp');
 
@@ -79,6 +86,32 @@ function handlePrint() {
         console.log('remove the appointment');
         aptDateTime.classList.add('invisible');
     };
+
+    /*remove meds to start if there is none */
+    console.log(medStart.value);
+
+    let isStart = medStart.value;
+    console.log(isApt);
+
+    if (!isStart) {
+        console.log('remove the appointment');
+        medBegin.classList.add('invisible');
+    };
+
+     /*remove meds to STOPif there is none */
+     console.log(medStop.value);
+
+     let isStop = medStop.value;
+    
+ 
+     if (!isStop) {
+         console.log('remove the appointment');
+         medEnd.classList.add('invisible');
+     };
+ 
+ 
+ 
+
     
     /* remove "print button" */
     printDiv.classList.add('invisible');
@@ -106,6 +139,7 @@ function handlePrint() {
 
 
 printBtn.addEventListener('click', handlePrint);
+
 
 
 lacerationBox.addEventListener( 'change', function() {
@@ -205,7 +239,12 @@ concussionBox.addEventListener( 'change', function() {
         <h4 class="font-weight-bold ml-3">Scan Me with your phone camera for more information:</h4>
 
         <img class="logo pb-5" src="/logos/concussionqr.png"/>
+
+        <iframe src="/pdfs/ConcussionDoDont.pdf" width="100%" height="500px"></iframe>
+
     `;
+
+    
 
     } else {
         console.log('unchecked');
