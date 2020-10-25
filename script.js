@@ -13,7 +13,13 @@ const ifAvailableDate=document.querySelector('dateHelp');
 const ifAvailableTime=document.querySelector('timeHelp');
 
 const lacerationBox=document.querySelector('#laceration');
-const headInjuryBox=document.querySelector('#headInjury');
+
+const diverticulitisBox = document.querySelector("#diverticulitis");
+const incidentalBox = document.querySelector("#incidental");
+const pediatricBox = document.querySelector("#pediatric");
+const concussionBox= document.querySelector("#concussion");
+const shinglesBox= document.querySelector("#shingles");
+
 
 
 const instructionBox = document.getElementById("specialInstructions");
@@ -21,12 +27,16 @@ const proceduralBox = document.querySelector('#proceduralSedation');
 
 var specialInstructions = "";
 
-/*
-function addtxt() {
-    document.getElementById("specialInstructions").value=specialInstructions;
-    
-};
-*/
+/* Add date and time to form */
+
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+var dateTime = date;
+
+document.getElementById("date").innerHTML = dateTime;
+
 
 
 function handlePrint() {
@@ -34,26 +44,11 @@ function handlePrint() {
     
     var textBox =  document.getElementById("specialInstructions").value;
     
-    if(lacerationBox.checked){
-        console.log(lacerationBox.checked);
-        textBox = textBox + "\nKeep you wound clean and dry.  Return to the ED if you have more pain, swelling, redness, fever, discharge from the wound or any concerns.";
-        console.log(textBox);    
-    };
-
     if(proceduralBox.checked){
         textBox = textBox + "\nDo not to drive, operate heavy machinery, use hot tubs, make important decisions, sign legal documents for 24h.  Return to the ER if you have fever, vomiting, or are unable to tolerate fluids.";
     };
 
-    if(headInjuryBox.checked){
-        textBox = textBox + "\nReturn to the ED if you headache becomes worse, you develop numbness, weakness, difficulty with speech or vision or you have have any concerns.  Follow up with your primary provider if you symptoms continue.";
-
-        document.getElementById("qr").innerHTML = `
-        <h4 class="font-weight-bold ml-3">Scan Me with your phone camera for more information:</h4>
-
-        <p>This is a test</p>
-        <img class="logo" src="/logos/concussionqr.png"/>
-        `;
-    };
+   
 
 
     document.getElementById("specialInstructions").value=textBox;
@@ -111,3 +106,143 @@ function handlePrint() {
 
 
 printBtn.addEventListener('click', handlePrint);
+
+
+lacerationBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + "\nKeep you wound clean and dry.  Return to the ED if you have more pain, swelling, redness, fever, discharge from the wound or any concerns.";
+
+        document.getElementById("specialInstructions").value=textBox;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace("\nKeep you wound clean and dry.  Return to the ED if you have more pain, swelling, redness, fever, discharge from the wound or any concerns.", "");
+        document.getElementById("specialInstructions").value=newTextBox;
+    }
+});
+
+diverticulitisBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.  As you start feeling better slowly add low-fiber foods. Examples of low-fiber foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp. low-fiber cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \nContact your doctor or return to the Emergency Department if: you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
+
+
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + diverticulitisInstructions
+
+        document.getElementById("specialInstructions").value=textBox;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(diverticulitisInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+    }
+});
+
+incidentalBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var incidentalInstructions = "\nYou have been provided with printed copy of your imaging (X-ray, CT-scan, Ultrasound) test report. Please take it to your family MD or primary provider for review. It may contain incidental findings that require further investingation.";
+
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + incidentalInstructions
+
+        document.getElementById("specialInstructions").value=textBox;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(incidentalInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+    }
+});
+
+pediatricBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var pediatricInstructions = "\nBring your child back to the Emergency Department if s/he has persistent vomiting, is not drinking or urinates less than 3 times in 24 hours, is having difficulty breathing, is unusually sleepy, has a stiff neck or complains of neck pain, is confused, is 'getting worse' or has not improved in 48-72h ";
+
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + pediatricInstructions 
+
+        document.getElementById("specialInstructions").value=textBox;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(pediatricInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+    }
+});
+
+concussionBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var concussionInstructions = "\nReturn to the ED if your headache becomes worse, you experience confusion, you develop numbness, weakness, difficulty with speech or vision or you have have any concerns.  Follow up with your primary provider if you symptoms continue.";
+
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + concussionInstructions 
+
+        document.getElementById("specialInstructions").value=textBox;
+
+        document.getElementById("qr").innerHTML = `
+
+        <h4 class="font-weight-bold ml-3">Scan Me with your phone camera for more information:</h4>
+
+        <img class="logo pb-5" src="/logos/concussionqr.png"/>
+    `;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(concussionInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+        document.getElementById("qr").innerHTML = ``
+    }
+});
+
+shinglesBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var shinglesInstructions = "\nAnyone who has recovered from chickenpox, and even children, can get shingles.  Symptoms of shingles include burning or shooting pain, tingling or itching, chills, fever, headache, upset stomach, and rashes or blisters that develop on one side of the body, usually on your face or around your waist. There are medicines that may help. Healthy adults age 50 and older should talk to their healthcare professional about getting the shingles vaccine to reduce their risk. Generally shingles is not contagious, but a person with active shingles can spread the virus when the rash is in the blister phase. It's important to keep the rash covered. Most cases of shingles last 3-5 weeks. Most people get shingles only one time, but, it is possible to have it more than once.  Return to the Emergency Departmen if you develop worsening pain, fever, dishcarge from the rash, pain or redness in your eye.\n\nYou can find more information here: https://www.nia.nih.gov/health/shingles";
+    
+    if(this.checked) {
+        console.log('checked');
+        
+        textBox = textBox + shinglesInstructions 
+
+        document.getElementById("specialInstructions").value=textBox;
+
+        document.getElementById("qr").innerHTML = `
+
+        <h4 class="font-weight-bold ml-3">Scan Me with your phone camera for more information:</h4>
+
+        <img class="logo pb-5" src="/logos/shinglesqr.png"/>
+    `;
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(shinglesInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+
+        document.getElementById("qr").innerHTML = ``
+
+    }
+});
+

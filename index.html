@@ -27,16 +27,26 @@
       <img class="logo" src="/logos/cgmh_logo.jpg">
     </div>
 
-    <div class="pb-4 text-center">
+
+    <div>
+      <h4 class="pb-2 text-right" id="date"></p>
+    </div>
+
+    <div class="pb-4 pt-5 text-center">
       <h3>Emergency Department</h3>
       <h1 class="font-weight-bold">Discharge Instructions</h1>
     </div>
 
+    
+
     <form>
+
+
+      
 
       <div class="ml-3 mr-3 form-group">
         <div class="form-group">
-          <label class="font-weight-bold" for="dischargeDiagnosis:">Discharge Diagnosis:</label>
+          <label class="font-weight-bold" for="dischargeDiagnosis">Discharge Diagnosis:</label>
           <input type="font-weight-bold" class="form-control form-control-lg font-weight-bold" id="dischargeDiagnosis">
         </div>
       </div>
@@ -60,8 +70,6 @@
             <option value="Dr. J. Zadra (Urology) - 1 Quarry Ridge Road, Unit 202">
             <option value="Stroke Prevention Clinic - Royal Victoria Hospital - 705-728-9090 Ext. 23300">
         </datalist>
-        
-
       </div>
 
 
@@ -89,24 +97,33 @@
           <div class="ml-3 mr-3">
           <h4 class="pt-2 pb-2 font-weight-bold">Standard Instructions</h4>        
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+
+                  <input type="checkbox" class="form-check-input" id="incidental">
                     <label class="optional form-check-label" for="exampleCheck1"><b>Incidental findings</b>: You have been provided with printed copy of your imaging (X-ray, CT-scan, etc) report. Please take it to your family MD for review. It may contain "incidental" findings that require further investingation.</label><br>
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="optional form-check-label" for="exampleCheck1" value="A requisition has been sent"><b>Outpatient Imaging:</b> A requisition has been sent and you will receive a phone call once this test has been scheduled.
-                  Follow up with your family physician if you do not receive a phone call within one week.</label><br>
                   
+                    <input type="checkbox" class="form-check-input" id="pediatric">
+                    <label class="optional form-check-label" for="exampleCheck1"><b>General Pediatrics Advice</b></label><br> 
 
 
                   <input type="checkbox" class="abdominalPain form-check-input" id="abdominalPain">
-                    <label class="optional form-check-label" for="exampleCheck1">Abdominal pain</label><br>  
+                    <label class="optional form-check-label" for="exampleCheck1">Abdominal pain</label><br> 
+                    
+                  <input type="checkbox" class="abdominalPain form-check-input" id="diverticulitis">
+                    <label class="optional form-check-label" for="exampleCheck1">Diverticulitis</label><br>  
+
                   <input type="checkbox" class="headache form-check-input" id="headache">
                     <label class="optional form-check-label" for="exampleCheck1">Headache</label><br>
-                  <input type="checkbox" class="headInjury form-check-input" id="headInjury">
+                  <input type="checkbox" class="headInjury form-check-input" id="concussion">
                     <label class="optional form-check-label" for="exampleCheck1">Concussion</label><br>
                   <input type="checkbox" class="laceration form-check-input" id="laceration">
                     <label class="optional form-check-label" for="exampleCheck1">Laceration Instructions</label><br>
                   <input type="checkbox" class="proceduralSedation form-check-input" id="proceduralSedation">
                     <label class="optional form-check-label" for="exampleCheck1">Procedural Sedation</label><br>
+                  
+                    <input type="checkbox" class="proceduralSedation form-check-input" id="shingles">
+                    <label class="optional form-check-label" for="exampleCheck1">Shingles</label><br>
+
+
                 </div>
           </div>
         </div>
@@ -117,7 +134,7 @@
           
       <div class="pt-3 ml-3 mr-3">
         <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Special Instructions:</h4></label>
-          <textarea class="form-control form-control-lg" id="specialInstructions" rows="12"></textarea>
+          <textarea class="form-control form-control-lg" id="specialInstructions" rows=16></textarea>
       </div>
       
 
@@ -130,12 +147,8 @@
     <h4 class="ml-3">If your symptoms change or get worse or if you have concerns about your condition:
       Contact your Family Physician, Nurse Practitioner, or call <b>TeleHealth Ontario</b> at 1-866-797-0000 or retrun to your local Emergency Department.</h4>
   
-      <div class="text-center" id="qr">   
+      <div class="pt-5 text-center" id="qr">   
       </div>
-  
-  
-  
-  
   
   
   
@@ -143,10 +156,6 @@
   </div>
 
     
-
-
-
-  
     
     <div class="printButton text-center">
       <button type="button" class="enter text-center mt-5 mb-5 btn btn-primary btn-lg">Print Instructions</button>
@@ -155,16 +164,6 @@
 </div>
 
     </div>
-
-
-    
-
-    
-
-
-
-
-
 
 
     <!-- Optional JavaScript -->

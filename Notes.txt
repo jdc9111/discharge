@@ -7,5 +7,10 @@ The 'Referral' box autocompletes.  Includes contact information to satisfy the C
 'Standard instructions' can be text that is added to the "Special Instrucitons" when the form is printer OR a QR code.
 
 ToDo's
-    Put today's date and time on.
+    Convert Date month to words
+    MD Name, CPSO, Billing #
+
+    
+
+
     
