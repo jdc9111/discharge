@@ -20,3 +20,8 @@ input[type=checkbox]:checked + label {
   margin-top: 50px;
   width: 220px;
 }
+
+@media print {
+  .pdf { display: none; }
+}
+

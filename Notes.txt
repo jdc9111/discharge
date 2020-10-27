@@ -3,8 +3,11 @@ The cool thing about this is that it's a "collapsing" form.  When printed it rem
 The 'Referral' box autocompletes.  Includes contact information to satisfy the CPSO requirement.
 
 'Apt Date & Time' boxes are removed if there is no scheduled apt time.
+'Meds to Start' and 'Meds to Stop' disappears if left blank.
 
 'Standard instructions' can be text that is added to the "Special Instrucitons" when the form is printer OR a QR code.  You can edit "standard instructions" before printing.
+
+Additional PDF handouts are added to the bottom of the "handout", but need to be printed separately (all you have to do is hit the 'print' button)
 
 I need help with more "standard instructions".  Throw 'em at me.
 
