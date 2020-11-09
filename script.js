@@ -6,7 +6,6 @@ const printDiv = document.querySelector('.printButton');
 const referralSentTo = document.querySelector('.referralTo');
 const referralDrop = document.querySelector('.referralDropDown');
 const aptDateTime = document.querySelector('.apts');
-
 const aptDay = document.querySelector('.aptDate');
 
 const medStart = document.querySelector('#medsToStart');
@@ -15,10 +14,21 @@ const medBegin = document.querySelector('.medInit');
 const medStop = document.querySelector('#medsToStop');
 const medEnd = document.querySelector('.medHalt');
 
+const mdName = document.querySelector('#mdName');
+const mdDemographics = document.querySelector('.MDid');
+const ohipNumberBox = document.querySelector('#ohipNumber');
+const ohipNumberDivBox = document.querySelector(".ohipNumberDiv");
+
+/*const cpsoNumberBox = document.querySelector('#cpsoNumber');
+const cpsoNumberDivBox = document.querySelector('.cpsoNumberDiv'); */
+
+ mdPhoneBox = document.querySelector('#mdPhone');
+
 
 const ifAvailableDate=document.querySelector('dateHelp');
 const ifAvailableTime=document.querySelector('timeHelp');
 
+const backPainBox=document.querySelector('#backPain');
 const lacerationBox=document.querySelector('#laceration');
 
 const diverticulitisBox = document.querySelector("#diverticulitis");
@@ -26,7 +36,6 @@ const incidentalBox = document.querySelector("#incidental");
 const pediatricBox = document.querySelector("#pediatric");
 const concussionBox= document.querySelector("#concussion");
 const shinglesBox= document.querySelector("#shingles");
-
 
 
 const instructionBox = document.getElementById("specialInstructions");
@@ -56,8 +65,6 @@ function handlePrint() {
     };
 
    
-
-
     document.getElementById("specialInstructions").value=textBox;
 
 
@@ -109,10 +116,35 @@ function handlePrint() {
          medEnd.classList.add('invisible');
      };
  
- 
- 
+     /*remove PHYSICIAN if there is none */
+     
+     let noName  = mdName.value;
 
-    
+     if(!noName) {
+         mdDemographics.classList.add('invisible');
+     }
+     
+     /* remove OHIP, CPSO number if black */
+
+     let noOhip = ohipNumberBox.value
+     /* let noCPSO = cpsoNumberBox.value */
+     let noPhone = mdPhoneBox.value 
+
+     if (!noOhip) {
+        ohipNumberDivBox.classList.add('invisible');
+     }
+
+     /*
+     if (!noCPSO) {
+        cpsoNumberDivBox.classList.add('invisible');
+     } */
+
+     if (!noPhone) {
+         mdPhoneBox.classList.add('invisible');
+     }
+
+
+
     /* remove "print button" */
     printDiv.classList.add('invisible');
 
@@ -122,24 +154,51 @@ function handlePrint() {
 
     /*remove Instruciton Option */
     instructionOptions.classList.add('invisible');
-
-
-
-
-
+    pediatricOptions.classList.add('invisible');
 
     /* print the handout */
     setTimeout(() => {
         window.print();
     }, 500)
 
-
 };
 
 
 
+$(window).on('load',function(){
+    $('#introModal').modal('show');
+});
+
+
 printBtn.addEventListener('click', handlePrint);
 
+
+backPainBox.addEventListener( 'change', function() {
+
+    var textBox =  document.getElementById("specialInstructions").value;
+    var backPainInstructions="Return to the Emergency Department if you develop fever, weakness or difficulty moving your legs.  Return if you have trouble passing urine or controlling your bowel movements (soil yourself) or feel numb in your groin when you wipe yourself.  These are signs your spinal cord may be compressed or pinched.  Follow up with your Family Physician or primary provider after your Emergency Department visit.";
+
+
+    if(this.checked) {
+        console.log('checked');
+
+        textBox = textBox + backPainInstructions
+        document.getElementById("specialInstructions").value=textBox;
+        
+        ;
+
+
+    } else {
+        console.log('unchecked');
+        
+        var newTextBox = textBox.replace(backPainInstructions, "");
+        document.getElementById("specialInstructions").value=newTextBox;
+
+        document.getElementById("qr").innerHTML = ``
+
+    }
+
+});
 
 
 lacerationBox.addEventListener( 'change', function() {
@@ -153,18 +212,31 @@ lacerationBox.addEventListener( 'change', function() {
         textBox = textBox + lacerationInstructions
         document.getElementById("specialInstructions").value=textBox;
 
+        document.getElementById("qr").innerHTML = `
+
+        <div class="pdf">
+            <iframe src="/pdfs/lacerationinstructions.pdf" width="100%" height="500px"></iframe>
+        </div>
+
+    `;
+
+
     } else {
         console.log('unchecked');
         
         var newTextBox = textBox.replace(lacerationInstructions, "");
         document.getElementById("specialInstructions").value=newTextBox;
+
+        document.getElementById("qr").innerHTML = ``
+
     }
+
 });
 
 diverticulitisBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fiber foods. Examples of low-fiber foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp. low-fiber cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if: you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
+    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fibre foods. Examples of low-fibre foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp. low-fiber cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\n\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
 
 
     if(this.checked) {
@@ -203,7 +275,7 @@ diverticulitisBox.addEventListener( 'change', function() {
 incidentalBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var incidentalInstructions = "You have been provided with printed copy of your imaging (X-ray, CT-scan, Ultrasound) test report. Please take it to your family MD or primary provider for review. It may contain incidental findings that require further investigation.\n";
+    var incidentalInstructions = "You have been provided with a printed copy of your imaging (X-ray, CT-scan, Ultrasound) test report. Please take it to your family MD or primary provider for review. It may contain incidental findings that require further investigation.\n";
 
     if(this.checked) {
         console.log('checked');
@@ -246,7 +318,7 @@ pediatricBox.addEventListener( 'change', function() {
 concussionBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var concussionInstructions = "Return to the ED if your headache becomes worse, you experience confusion, you develop numbness, weakness, difficulty with speech or vision or you have have any concerns.  Follow up with your primary provider if you symptoms continue.\n";
+    var concussionInstructions = "Return to the ED if your headache becomes worse, you have a 'severe' headache, you experience confusion, you develop numbness, weakness, difficulty with speech or vision or you have any concerns.  Follow up with your primary provider if your symptoms continue.\n";
 
     if(this.checked) {
         console.log('checked');

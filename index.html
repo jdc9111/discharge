@@ -19,17 +19,70 @@
 
   <body>
 
+    <!-- Intro Modal -->
+    <div class="modal fade" id="introModal" tabindex="-1" role="dialog" aria-labelledby="introModalonLoad" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Discharge Instructions Beta Version 0.1</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>This is a "collapsing" discharge instruction form.  Anything you leave blank will not appear on the printed form given to patients.</p>
+            <p>Any PDFs added to the handout must be printed separately by using the print button in the top right of the PDF window.</p>
+            <p>Let me know what you think about using 'QR' codes in handouts.  Too complicated for most?</p>
+            <p>I need help with more "standard instructions".  Throw 'em at me.</p>
+            <p><b>You can toggle the logo at the top left by clicking on it if you feel comfortable using the CGMH logo</b></p>
+            <p>I suggest printing 2 copies, one for the chart.</p>
+            <p>PLEASE let me know if you any suggestion or concerns.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ml-5 mr-5">
+      <div class="container-fluid pt-5">
+        <div class="row">
+          <div class="col-sm-2 col-xl-4">
+            <img id="imgplus" alt="redcross" class="logo" src="logos/redcross.jpg" onmouseover="this.style.cursor='pointer'" onclick="chngimg()"   />
+      
+          </div>
+          <div class="col-sm-4 col-xl-4">
+          </div>
+          <div class="col-sm-6 col-xl-4">
+            <div class="card bg-light ml-3">
+              <form class="pl-2 pt-3 pr-2">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Patient Name">
+                </div>
+                <div class="form-group">
+                  <input type="telephone" class="form-control" id="exampleInputPassword1" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="HealthCard #">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   
+
+
 
 <div class="ml-5 mr-5">
 
     <div>
-      <img class="logo" src="/logos/cgmh_logo.jpg">
-    </div>
-
-
-    <div>
-      <h4 class="pb-2 pt-5 mt-5 text-right" id="date"></p>
+      <h4 class="pb-2 mt-5 mr-5 text-right" id="date"></p>
     </div>
 
     <div class="text-center">
@@ -37,12 +90,7 @@
       <h1 class="font-weight-bold">Discharge Instructions</h1>
     </div>
 
-    
-
     <form>
-
-
-      
 
       <div class="ml-3 mr-3 form-group">
         <div class="form-group">
@@ -69,6 +117,8 @@
             <option value="Collingwood Cardiology - 1 Huron Street, Suite 201, Collingwood - 705-444-1648">
             <option value="Dr. J. Zadra (Urology) - 1 Quarry Ridge Road, Unit 202">
             <option value="Stroke Prevention Clinic - Royal Victoria Hospital - 705-728-9090 Ext. 23300">
+            <option value="Peak to Shore Sports Medicine - 1 First Street Unit 102 - Collingwood 705-446-2551">
+    
         </datalist>
       </div>
 
@@ -90,32 +140,55 @@
       </div>
  
     
-    <br>
+      <br>
 
-      <div class="medInit pt-3 ml-3 mr-3">
-        <label for="medsToStart"><h4 class="font-weight-bold">Medications to START:</h4></label>
-          <textarea class="form-control form-control-lg" id="medsToStart" rows=4></textarea>
-      </div>
+      <div class="meds mb-3">
 
-      <div class="medHalt pt-3 pb-3 ml-3 mr-3">
-        <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Medications to STOP:</h4></label>
-          <textarea class="form-control form-control-lg" id="medsToStop" rows=4></textarea>
+        <div class="row">
+
+          <div class="col medInit pt-3 ml-3 mr-3">
+            <label for="medsToStart"><h4 class="font-weight-bold">Medications to <span class="text-success">START:</span></h4></label>
+              <textarea class="form-control form-control-lg" id="medsToStart" rows=4></textarea>
+          </div>
+
+          <div class="col medHalt pt-3 pb-3 ml-3 mr-3">
+            <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Medications to <span class="text-danger">STOP:</span></h4></label>
+              <textarea class="form-control form-control-lg" id="medsToStop" rows=4></textarea>
+          </div>
+
+        </div>
+
+      </div>  
+
+      <div class="ml-3 mr-3 pediatric pt-3 pb-3" id="pediatricOptions">
+        <h4 class="ml-3 mr-3 font-weight-bold">Pediatric Instructions</h4>
+        <div class="form-check ml-3">
+
+            <input type="checkbox" class="form-check-input" id="pediatric">
+            <label class="optional form-check-label" for="exampleCheck1"><b>General Pediatrics Advice</b></label><br> 
+
+            <input type="checkbox" class="form-check-input" id="febrileSeizure">
+            <label class="optional form-check-label" for="exampleCheck1">Febrile Seizure</label><br> 
+            
+
+        </div>
       </div>
-      
+    
       <div class="standardInstructions" id="instructionOptions">
-        <div class="card ml-3 mr-3 pb-3 bg-light">
+        <div class="card ml-3 mr-3 mb-3 mt-3 pb-3 bg-light">
           <div class="ml-3 mr-3">
           <h4 class="pt-2 pb-2 font-weight-bold">Standard Instructions</h4>        
                 <div class="form-check">
 
                   <input type="checkbox" class="form-check-input" id="incidental">
                     <label class="optional form-check-label" for="exampleCheck1"><b>Incidental findings</b>: You have been provided a with printed copy of your imaging (X-ray, CT-scan, etc) report. Please take it to your family MD for review. It may contain "incidental" findings that require further investigation.</label><br>
-                  
-                    <input type="checkbox" class="form-check-input" id="pediatric">
-                    <label class="optional form-check-label" for="exampleCheck1"><b>General Pediatrics Advice</b></label><br> 
 
+                  <input type="checkbox" class="form-check-input" id="backPain">
+                    <label class="optional form-check-label" for="exampleCheck1">Back Pain</label><br> 
 
-                    
+                  <input type="checkbox" class="form-check-input" id="conjunctivitis">
+                    <label class="optional form-check-label" for="exampleCheck1">Conjunctivitis</label><br> 
+
                   <input type="checkbox" class="abdominalPain form-check-input" id="diverticulitis">
                     <label class="optional form-check-label" for="exampleCheck1">Diverticulitis</label><br>  
 
@@ -139,37 +212,64 @@
         </div>
       </div>
 
-
       <div class="pt-3 ml-3 mr-3">
         <label for="exampleFormControlTextarea1"><h4 class="font-weight-bold">Special Instructions:</h4></label>
           <textarea class="form-control form-control-lg" id="specialInstructions" rows=16></textarea>
       </div>
+
+      <div class="MDid pt-3 ml-3 mr-3">
+        <div class="form-row">
+          <div class="col">
+            <input list="edDoctors" type="text" class="form-control" id="mdName" placeholder="Physician Name">
+              <datalist id="edDoctors">
+                <option value="Dr. G. Bolton">
+                <option value="Dr. D. Chisholm">
+                <option value="Dr. J. Gencarelli">
+                <option value="Dr. D. Ohrling">
+                <option value="Dr. D. Weadick">
+          </div>
+          <div class="col cpsoNumberDiv">
+            <input type="text" class="form-control" id="cpsoNumber">
+            <small id="cpsoNumber" class="form-text text-muted">CPSO#</small>
+          </div>
+          <div class="col ohipNumberDiv">
+            <input type="text" class="form-control" id="ohipNumber">
+            <small id="ohipNumber" class="form-text text-muted">OHIP#</small>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-3 pt-2">
+            <input type="telephone" class="form-control" id="mdPhone" name="mdPhone" placeholder="MD Phone #">
+          </div>
+        </div>
+  
+      </div>
+
       
 
     </form>
 
-    </br>
+      </br>
 
 
 
-    <h4 class="ml-3">If your symptoms change or get worse or if you have concerns about your condition:
+      <h4 class="ml-3">If your symptoms change or get worse or if you have concerns about your condition:
       Contact your Family Physician, Nurse Practitioner, or call <b>TeleHealth Ontario</b> at 1-866-797-0000 or retrun to your local Emergency Department.</h4>
   
       <div class="pt-5 text-center" id="qr">   
       </div>
   
-  </div>
+    </div>
 
     
     
-    <div class="printButton text-center">
-      <button type="button" class="enter text-center mt-5 mb-5 btn btn-primary btn-lg">Print Instructions</button>
-    </div>
+      <div class="printButton text-center">
+        <button type="button" class="enter text-center mt-5 mb-5 btn btn-primary btn-lg">Print Instructions</button>
+      </div>
   
-</div>
-
     </div>
 
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -178,5 +278,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <script src="script.js"></script>
+    <script src="addRemoveMeds.js"></script>
+    <script src="updateMDId.js"></script>
+    <script src="toggleLogo.js"></script>
+    <script src="conjunctivitis.js"></script>
+    <script src="proceduralSedation.js"></script>
+    <script src="febrileseizure.js"></script>
+
   </body>
 </html>

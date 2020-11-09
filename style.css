@@ -15,13 +15,28 @@ input[type=checkbox]:checked + label {
   display: none;
 }
 
+
 .logo {
   margin-left: 30px;
   margin-top: 50px;
   width: 220px;
 }
 
+.pediatric {
+  background-color: pink;
+  border: thin;
+  border-color: black;
+  border-radius: 5px;
+
+}
+
+#showPeds {
+  display:none;
+}
+
 @media print {
   .pdf { display: none; }
 }
+
+
 
