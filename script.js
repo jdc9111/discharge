@@ -5,6 +5,8 @@ const printDiv = document.querySelector('.printButton');
 
 const referralSentTo = document.querySelector('.referralTo');
 const referralDrop = document.querySelector('.referralDropDown');
+
+
 const aptDateTime = document.querySelector('.apts');
 const aptDay = document.querySelector('.aptDate');
 
@@ -160,6 +162,7 @@ function handlePrint() {
 
     
     /* print the handout */
+
     moveInstructions ();
 
     setTimeout(() => {
@@ -181,7 +184,7 @@ printBtn.addEventListener('click', handlePrint);
 backPainBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var backPainInstructions="Return to the Emergency Department if you develop fever, weakness or difficulty moving your legs.  Return if you have trouble passing urine or controlling your bowel movements (soil yourself) or feel numb in your groin when you wipe yourself.  These are signs your spinal cord may be compressed or pinched.  Follow up with your Family Physician or primary provider after your Emergency Department visit.";
+    var backPainInstructions="Return to the Emergency Department if you develop fever, weakness or difficulty moving your legs.  Return if you have trouble passing urine or controlling your bowel movements (soil yourself) or feel numb in your groin when you wipe yourself.  These are signs your spinal cord may be compressed or pinched.  Follow up with your Family Physician or primary provider after your Emergency Department visit.\n\n";
 
 
     if(this.checked) {
@@ -209,7 +212,7 @@ backPainBox.addEventListener( 'change', function() {
 lacerationBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var lacerationInstructions="Keep your wound clean and dry.  Return to the Emergency Department if you have more pain, swelling, redness, fever, 'red streaks', discharge from the wound or any concerns.\n";
+    var lacerationInstructions="Keep your wound clean and dry.  Return to the Emergency Department if you have more pain, swelling, redness, fever, 'red streaks', discharge from the wound or any concerns.\n\n";
 
     if(this.checked) {
         console.log('checked');
@@ -241,7 +244,7 @@ lacerationBox.addEventListener( 'change', function() {
 diverticulitisBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fibre foods. Examples of low-fibre foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp, low-fibre cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\n\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
+    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fibre foods. Examples of low-fibre foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp, low-fibre cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\n\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499\n\n";
 
 
     if(this.checked) {
@@ -280,7 +283,7 @@ diverticulitisBox.addEventListener( 'change', function() {
 incidentalBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var incidentalInstructions = "You have been provided with a printed copy of your imaging (X-ray, CT-scan, Ultrasound) test report. Please take it to your family MD or primary provider for review. It may contain incidental findings that require further investigation.\n";
+    var incidentalInstructions = "You have been provided with a printed copy of your imaging (X-ray, CT-scan, Ultrasound) test report. Please take it to your family MD or primary provider for review. It may contain incidental findings that require further investigation.\n\n";
 
     if(this.checked) {
         console.log('checked');
@@ -303,7 +306,7 @@ incidentalBox.addEventListener( 'change', function() {
 pediatricBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var pediatricInstructions = "Bring your child back to the Emergency Department if s/he has persistent vomiting, is not drinking or urinates less than 3 times in 24 hours, is having difficulty breathing, is unusually sleepy, has a stiff neck or complains of neck pain, is confused, is 'getting worse' or has not improved in 48-72h.\n";
+    var pediatricInstructions = "Bring your child back to the Emergency Department if s/he has persistent vomiting, is not drinking or urinates less than 3 times in 24 hours, is having difficulty breathing, is unusually sleepy, has a stiff neck or complains of neck pain, is confused, is 'getting worse' or has not improved in 48-72h.\n\n";
 
     if(this.checked) {
         console.log('checked');
@@ -323,7 +326,7 @@ pediatricBox.addEventListener( 'change', function() {
 concussionBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var concussionInstructions = "Return to the ED if your headache becomes worse, you have a 'severe' headache, you experience confusion, you develop numbness, weakness, difficulty with speech or vision or you have any concerns.  Follow up with your primary provider if your symptoms continue.\n";
+    var concussionInstructions = "Return to the ED if your headache becomes worse, you have a 'severe' headache, you experience confusion, you develop numbness, weakness, difficulty with speech or vision or you have any concerns.  Follow up with your primary provider if your symptoms continue.\n\n";
 
     if(this.checked) {
         console.log('checked');
@@ -358,7 +361,7 @@ concussionBox.addEventListener( 'change', function() {
 shinglesBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var shinglesInstructions = "Anyone who has recovered from chickenpox, even children, can get shingles.  Symptoms of shingles include burning or shooting pain, tingling or itching, chills, fever, headache, upset stomach, and rashes or blisters that develop on one side of the body, usually on your face or around your waist. There are medicines that may help. Healthy adults age 50 and older should talk to their healthcare professional about getting the shingles vaccine to reduce their risk. Generally, shingles is not contagious, but a person with active shingles can spread the virus when the rash is in the blister phase. It's important to keep the rash covered. Most cases of shingles last 3-5 weeks. Most people get shingles only one time, but, it is possible to have it more than once.  Return to the Emergency Department if you develop worsening pain, fever, discharge from the rash, pain or redness in your eye.\n\nYou can find more information here: https://www.nia.nih.gov/health/shingles\n";
+    var shinglesInstructions = "Anyone who has recovered from chickenpox, even children, can get shingles.  Symptoms of shingles include burning or shooting pain, tingling or itching, chills, fever, headache, upset stomach, and rashes or blisters that develop on one side of the body, usually on your face or around your waist. There are medicines that may help. Healthy adults age 50 and older should talk to their healthcare professional about getting the shingles vaccine to reduce their risk. Generally, shingles is not contagious, but a person with active shingles can spread the virus when the rash is in the blister phase. It's important to keep the rash covered. Most cases of shingles last 3-5 weeks. Most people get shingles only one time, but, it is possible to have it more than once.  Return to the Emergency Department if you develop worsening pain, fever, discharge from the rash, pain or redness in your eye.\n\nYou can find more information here: https://www.nia.nih.gov/health/shingles\n\n";
     
     if(this.checked) {
         console.log('checked');

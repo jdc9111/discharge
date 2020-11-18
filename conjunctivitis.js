@@ -9,7 +9,7 @@ conjunctivitisBox.addEventListener( 'change', function() {
     abx         = "Antibiotics if prescribed."
     visine      = "Do not use Visine or other medication to make your eyes less red.";
     
-    var conjunctivitisInstructions="\nDO NOT WEAR CONTACT LENSES.\nReturn to the Emergency Department if your vision changes or your symptoms worsen or if you have concerns.\n";
+    var conjunctivitisInstructions="DO NOT WEAR CONTACT LENSES.\nReturn to the Emergency Department if your vision changes or your symptoms worsen or if you have concerns.\n\n";
 
     if(this.checked) {
         console.log('checked');

@@ -4,7 +4,7 @@ const proceduralSedationBox = document.querySelector('#proceduralSedation');
 proceduralSedationBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;    
-    var proceduralSedationInstructions="Do not drive, swim, operate dangerous equipment or make important decisions for 24h.\nReturn to the Emergency Department if you have fever, vomiting for more than 8 hours, shortness of breath, chest pains or concerns.\n";
+    var proceduralSedationInstructions="Do not drive, swim, operate dangerous equipment or make important decisions for 24h.\nReturn to the Emergency Department if you have fever, vomiting for more than 8 hours, shortness of breath, chest pains or concerns.\n\n";
 
     if(this.checked) {
         console.log('checked');
