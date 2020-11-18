@@ -1,4 +1,4 @@
-console.log('it works');
+console.log('it works again!');
 
 const printBtn = document.querySelector('.enter');
 const printDiv = document.querySelector('.printButton');

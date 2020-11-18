@@ -19,6 +19,12 @@
 
 }
 
+.redBackground {
+  background-color: red;
+  font: white;
+}
+
+
 #showPeds {
   display:none;
 }
@@ -38,6 +44,9 @@
   font-size: 4 rem !important;
 }
 
+#qr {
+  page-break-inside: avoid;
+}
 
 .outputInstructions {
   display: none}
