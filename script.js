@@ -19,10 +19,10 @@ const mdDemographics = document.querySelector('.MDid');
 const ohipNumberBox = document.querySelector('#ohipNumber');
 const ohipNumberDivBox = document.querySelector(".ohipNumberDiv");
 
-/*const cpsoNumberBox = document.querySelector('#cpsoNumber');
-const cpsoNumberDivBox = document.querySelector('.cpsoNumberDiv'); */
+const cpsoNumberBox = document.querySelector('#cpsoNumber');
+const cpsoNumberDivBox = document.querySelector('.cpsoNumberDiv'); 
 
- mdPhoneBox = document.querySelector('#mdPhone');
+const mdPhoneBox = document.querySelector('#mdPhone');
 
 
 const ifAvailableDate=document.querySelector('dateHelp');
@@ -126,27 +126,29 @@ function handlePrint() {
      
      /* remove OHIP, CPSO number if black */
 
-     let noOhip = ohipNumberBox.value
-     /* let noCPSO = cpsoNumberBox.value */
-     let noPhone = mdPhoneBox.value 
+     let noOhip = ohipNumberBox.value;
+     let noCPSO = cpsoNumberBox.value;
+     let noPhone = mdPhoneBox.value;
 
      if (!noOhip) {
         ohipNumberDivBox.classList.add('invisible');
      }
 
-     /*
+     
      if (!noCPSO) {
         cpsoNumberDivBox.classList.add('invisible');
-     } */
+     } 
 
      if (!noPhone) {
          mdPhoneBox.classList.add('invisible');
      }
 
 
+    
+    /* remove "print button" 
+    printDiv.classList.add('invisible'); 
+     */
 
-    /* remove "print button" */
-    printDiv.classList.add('invisible');
 
     /* remove "if available" */
     dateHelp.classList.add('invisible');
@@ -156,7 +158,10 @@ function handlePrint() {
     instructionOptions.classList.add('invisible');
     pediatricOptions.classList.add('invisible');
 
+    
     /* print the handout */
+    moveInstructions ();
+
     setTimeout(() => {
         window.print();
     }, 500)
@@ -236,7 +241,7 @@ lacerationBox.addEventListener( 'change', function() {
 diverticulitisBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fibre foods. Examples of low-fibre foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp. low-fiber cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\n\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
+    var diverticulitisInstructions = "Take antibiotics and pain medicine as prescribed.\n\nStart with only clear liquids for a few days. Examples of items allowed on a clear liquid diet include: broth, fruit juices without pulp, such as apple juice, ice chips, Ice pops without bits of fruit or fruit pulp, gelatin, water, tea or coffee without cream.\n\nAs you start feeling better slowly add low-fibre foods. Examples of low-fibre foods include: canned or cooked fruits without skin or seeds, canned or cooked vegetables such as green beans, carrots and potatoes (without the skin), eggs, fish and poultry, refined white bread, fruit and vegetable juice with no pulp, low-fibre cereals, milk, yogurt and cheese, white rice, pasta and noodles. You should feel better within two or three days of starting the diet and antibiotics. If you haven't started feeling better by then, call your doctor. \n\nContact your doctor or return to the Emergency Department if you develop a fever, your abdominal pain is worsening, or you are unable to keep clear liquids down.  These may indicate a complication that requires hospitalization.\n\nhttps://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/diverticulitis-diet/art-20048499";
 
 
     if(this.checked) {
@@ -353,7 +358,7 @@ concussionBox.addEventListener( 'change', function() {
 shinglesBox.addEventListener( 'change', function() {
 
     var textBox =  document.getElementById("specialInstructions").value;
-    var shinglesInstructions = "Anyone who has recovered from chickenpox, even children, can get shingles.  Symptoms of shingles include burning or shooting pain, tingling or itching, chills, fever, headache, upset stomach, and rashes or blisters that develop on one side of the body, usually on your face or around your waist. There are medicines that may help. Healthy adults age 50 and older should talk to their healthcare professional about getting the shingles vaccine to reduce their risk. Generally shingles is not contagious, but a person with active shingles can spread the virus when the rash is in the blister phase. It's important to keep the rash covered. Most cases of shingles last 3-5 weeks. Most people get shingles only one time, but, it is possible to have it more than once.  Return to the Emergency Department if you develop worsening pain, fever, discharge from the rash, pain or redness in your eye.\n\nYou can find more information here: https://www.nia.nih.gov/health/shingles\n";
+    var shinglesInstructions = "Anyone who has recovered from chickenpox, even children, can get shingles.  Symptoms of shingles include burning or shooting pain, tingling or itching, chills, fever, headache, upset stomach, and rashes or blisters that develop on one side of the body, usually on your face or around your waist. There are medicines that may help. Healthy adults age 50 and older should talk to their healthcare professional about getting the shingles vaccine to reduce their risk. Generally, shingles is not contagious, but a person with active shingles can spread the virus when the rash is in the blister phase. It's important to keep the rash covered. Most cases of shingles last 3-5 weeks. Most people get shingles only one time, but, it is possible to have it more than once.  Return to the Emergency Department if you develop worsening pain, fever, discharge from the rash, pain or redness in your eye.\n\nYou can find more information here: https://www.nia.nih.gov/health/shingles\n";
     
     if(this.checked) {
         console.log('checked');

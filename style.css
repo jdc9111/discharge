@@ -1,16 +1,4 @@
 
-/*
-input[type=checkbox] + label {
-  color: #ccc;
-  font-style: italic;
-} 
-input[type=checkbox]:checked + label {
-  color: black;
-  font-style: normal;
-} 
-
-*/
-
 .invisible {
   display: none;
 }
@@ -23,10 +11,11 @@ input[type=checkbox]:checked + label {
 }
 
 .pediatric {
-  background-color: pink;
+  background-color: rgb(247, 224, 228);
   border: thin;
-  border-color: black;
+  border-color: gray;
   border-radius: 5px;
+  border-style: solid;
 
 }
 
@@ -34,8 +23,30 @@ input[type=checkbox]:checked + label {
   display:none;
 }
 
+#finishedInstructions {
+  border: thin lightgray;
+  font-weight: normal !important;
+  border-radius: 5px;
+  font-size: 4.0rem;
+  border-style: solid;
+
+}
+
+#movedInstuctions {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-size: 4 rem !important;
+}
+
+
+.outputInstructions {
+  display: none}
+
+
 @media print {
   .pdf { display: none; }
+  .inputInstructions {display: none}
+  .outputInstructions {display:block}
 }
 
 

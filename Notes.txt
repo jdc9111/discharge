@@ -5,7 +5,7 @@ ToDo's
     Convert Date month to words
     Remove MD name, phone, CPSO, OPHIP # if blank
     Copy instruction to clipboard for chart
-    Move "special instructions" to DIV so the instructions can be longer.
+    
 
 Completed
     Toggle hospital image

@@ -1,13 +1,14 @@
 console.log('this is test... it works');
 
 const mdNameBox = document.querySelector('#mdName');
-const cpsoNumberBox = document.querySelector('#cpsoNumber');
+/*const cpsoNumberBox = document.querySelector('#cpsoNumber');*/
 
 
 mdNameBox.addEventListener( 'change', function() {
 
     var chisholm = mdNameBox.value.includes("Chisholm");
     var ohrling = mdNameBox.value.includes("Ohrling");
+    var bolton  = mdNameBox.value.includes("Bolton");
 
     if (chisholm) {
         console.log('Chisholm');

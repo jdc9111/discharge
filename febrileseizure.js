@@ -24,6 +24,10 @@ febrileSeizureBox.addEventListener( 'change', function() {
     
         document.getElementById("qr").innerHTML = `
 
+        <h4 class="font-weight-bold ml-3">Scan Me with your phone camera for more information:</h4>
+
+        <img class="logo pb-5" src="/logos/febseizureqr.png"/>
+
             <div class="pdf">
                 <iframe src="/pdfs/febrileSx.pdf" width="100%" height="500px"></iframe>
             </div>
